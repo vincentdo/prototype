@@ -148,8 +148,9 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
+            '.tmp',            
             '<%= yeoman.dist %>/*',
+            '!<%= yeoman.dist %>/public/fonts',
             '!<%= yeoman.dist %>/.git*',
             '!<%= yeoman.dist %>/.openshift',
             '!<%= yeoman.dist %>/Procfile'
@@ -360,6 +361,10 @@ module.exports = function (grunt) {
             'package.json',
             'server/**/*'
           ]
+        }, {
+          expand: true,
+          dest: '<%= yeoman.dist %>/public/fonts',
+          src: ['bower_components/fontawesome/fonts/*']
         }]
       },
       styles: {

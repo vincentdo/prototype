@@ -71,7 +71,7 @@
 
     <div class="row" ng-Controller="RiotController">
       <h4 class="text-center"> Activity Summary </h4>
-      <div class="col-lg-4 text-center">
+      <div class="col-lg-4 col-lg-offset-4 text-center">
         <!-- <h5> {{playerProfile.name}} </h5> -->
         <br>
         <h5> I was last seen on </h5>
@@ -102,12 +102,12 @@
       </div>
       <br>
 
-      <div class="col-lg-4 text-center">
+      <div class="col-lg-4 col-lg-offset-4 text-center">
         <img class="img-circle intro-pic" src="assets/images/album.jpg">
       </div>
       <br>
 
-      <div class="col-lg-12">
+      <div class="col-lg-8 col-lg-offset-2">
         <div ng-controller="AudioController">
           <audio media-player="mediaPlayer" playlist="playlist">
           </audio>
