@@ -1,0 +1,16 @@
+.skill-logo {
+  max-height: 75px;
+  max-width: 75px;
+}
+
+.game-icon {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.intro-pic {
+  max-height: 300px;
+  max-width: 300px;
+  z-index: 1;
+  border: 2px solid;
+}

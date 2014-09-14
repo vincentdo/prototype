@@ -1,0 +1,166 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
+        <div class="intro-text">
+          <img class="intro-pic img-circle img-responsive" src="assets/images/crop.jpg">
+          <span class="skills"> Developer | Gamer | Part-time Producer </span>
+        </div>
+      </div>
+    </div>
+  </div>    
+</header>
+<!-- intro-header -->
+
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2> Developer </h2>
+        <hr class="divider">
+      </div>
+
+      <div class="col-lg-12 text-center">
+        <p>Front-end is cool, but I'm much better with the middle and back-end of things.</p>
+
+        <br>
+
+        <h4> Familiar Technology </h4>
+        <br>
+
+        <ul class="list-inline">
+          <li><img class="img-circle skill-logo" src="assets/images/mongo.png"></li>
+          <li><img class="img-circle skill-logo" src="assets/images/js.png"></li>
+          <li><img class="img-circle skill-logo" src="assets/images/node.jpeg"></li>
+          <li><img class="img-circle skill-logo" src="assets/images/python.png"></li>
+          <li><img class="img-circle skill-logo" src="assets/images/java.png"></li>
+        </ul>
+        
+        <br>
+
+        <h4> Previously Worked With </h4>
+        <br>
+        <ul class="list-inline">
+          <li><img class="img-rounded skill-logo" src="assets/images/goldman.png"></li>
+          <li><img class="img-rounded skill-logo" src="assets/images/mongo.png"></li>
+          <li><img class="img-rounded skill-logo" src="assets/images/penn.png"></li>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="success" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2> Gamer </h2>
+        <hr class="divider">
+      </div>
+
+      <div class="col-lg-12 text-center">
+        <p> I'm a big fan of strategy games of various sorts. These days, I can be found occasionally on the Summoner's Rift of League of Legends.
+        </p> 
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row" ng-Controller="RiotController">
+      <h4 class="text-center"> Activity Summary </h4>
+      <div class="col-lg-4 text-center">
+        <!-- <h5> {{playerProfile.name}} </h5> -->
+        <br>
+        <h5> I was last seen on </h5>
+        <h6> {{playerProfile.lastSeen}} </h6>
+    
+        <br>   
+        <h5> Playing with </h5>
+        <img class="img-circle game-icon" src="{{playerProfile.championPicture}}"/>
+        <h5> {{playerProfile.championName}} </h5>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="producer">
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2> Producer </h2>
+        <hr class="divider">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <p> I sometimes occupy myself by with music related things like singing and playing instruments. When I'm feeling more adventurous I pretend to be a producer and try to make music. </p>
+      </div>
+      <br>
+
+      <div class="col-lg-4 text-center">
+        <img class="img-circle intro-pic" src="assets/images/album.jpg">
+      </div>
+      <br>
+
+      <div class="col-lg-12">
+        <div ng-controller="AudioController">
+          <audio media-player="mediaPlayer" playlist="playlist">
+          </audio>
+
+          <br>
+
+          <!-- Player Control -->
+          <div class="panel">
+            <table class="table player-control" style="background-color:#18BC9C">
+                <tr>
+                  <td>
+                    <div class="btn" ng-click="mediaPlayer.playPause()">
+                      <i class="fa fa-play fa-4x" ng-class="{ 'fa-pause': mediaPlayer.playing, 'fa-play': !mediaPlayer.playing }"></i>
+                    </div>
+                  </td>
+                  <td style="vertical-align: middle">
+                  <h4>Now Playing:&nbsp;&nbsp;{{currentTrack.title}}</h4>
+                  </td>
+                </tr>
+            </table>
+          </div>
+          
+
+          <!-- Song List -->
+          <div class="panel panel-success">
+            <div class="panel-heading text-center" style="background-color:#18BC9C">
+            <h5 style="color:#2C3E50">Sample Playlist</h5>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                  <th class="text-center">#</th>
+                  <th class="text-center">Title</th> 
+                </thead> 
+                <tbody> 
+                  <tr class="text-center" ng-repeat="song in playlist" ng-click="mediaPlayer.playPause($index)" ng-class="{ active: mediaPlayer.playing && mediaPlayer.currentTrack-1 === $index }"> 
+                    <td>{{ $index+1 }}</td> 
+                    <td>{{ song.title }}</td> 
+                  </tr> 
+                </tbody>
+              </table>
+            </div>
+          </div>  
+          <!-- End Song List -->
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      
+
